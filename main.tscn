@@ -1,0 +1,135 @@
+[gd_scene load_steps=9 format=3 uid="uid://c5f1gell1psoj"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hgbit"]
+bounce = 0.7
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qg1ng"]
+margin = 0.0
+radius = 0.05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2s4i4"]
+albedo_color = Color(0.243137, 0.309804, 0.345098, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_qcrfp"]
+material = SubResource("StandardMaterial3D_2s4i4")
+radius = 0.05
+height = 0.1
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ekied"]
+bounce = 0.14
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7c8rd"]
+margin = 0.0
+size = Vector3(2.4, 1, 1.8)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_572b5"]
+albedo_color = Color(0.309804, 1, 0.109804, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_s2vl2"]
+material = SubResource("StandardMaterial3D_572b5")
+size = Vector2(2.4, 1.8)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.529919, 0.848048, 0, -0.848048, 0.529919, 0, 3, 2)
+current = true
+fov = 25.0
+
+[node name="RigidBody3DBall" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+physics_material_override = SubResource("PhysicsMaterial_hgbit")
+
+[node name="CollisionShape3DBall" type="CollisionShape3D" parent="RigidBody3DBall"]
+shape = SubResource("SphereShape3D_qg1ng")
+
+[node name="MeshInstance3DBall" type="MeshInstance3D" parent="RigidBody3DBall"]
+mesh = SubResource("SphereMesh_qcrfp")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3DTable" type="StaticBody3D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_ekied")
+
+[node name="CollisionShape3DTable" type="CollisionShape3D" parent="StaticBody3DTable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_7c8rd")
+
+[node name="MeshInstance3DTable" type="MeshInstance3D" parent="StaticBody3DTable"]
+mesh = SubResource("PlaneMesh_s2vl2")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3DWallN" type="StaticBody3D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_ekied")
+
+[node name="CollisionShape3DWallN" type="CollisionShape3D" parent="StaticBody3DWallN"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_7c8rd")
+
+[node name="MeshInstance3DWallN" type="MeshInstance3D" parent="StaticBody3DWallN"]
+mesh = SubResource("PlaneMesh_s2vl2")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3DWallS" type="StaticBody3D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_ekied")
+
+[node name="CollisionShape3DWallS" type="CollisionShape3D" parent="StaticBody3DWallS"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_7c8rd")
+
+[node name="MeshInstance3DWallS" type="MeshInstance3D" parent="StaticBody3DWallS"]
+mesh = SubResource("PlaneMesh_s2vl2")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3DWallE" type="StaticBody3D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_ekied")
+
+[node name="CollisionShape3DWallE" type="CollisionShape3D" parent="StaticBody3DWallE"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_7c8rd")
+
+[node name="MeshInstance3DWallE" type="MeshInstance3D" parent="StaticBody3DWallE"]
+mesh = SubResource("PlaneMesh_s2vl2")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3DWallW" type="StaticBody3D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_ekied")
+
+[node name="CollisionShape3DWallW" type="CollisionShape3D" parent="StaticBody3DWallW"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_7c8rd")
+
+[node name="MeshInstance3DWallW" type="MeshInstance3D" parent="StaticBody3DWallW"]
+mesh = SubResource("PlaneMesh_s2vl2")
+skeleton = NodePath("../..")
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, -0.770491, 0.637451, 0, -0.637451, -0.770491, -1.2, 1.5, -0.9)
+light_energy = 0.254
+shadow_enabled = true
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, -0.770491, 0.637451, 0, -0.637451, -0.770491, 0, 1.5, -0.9)
+light_energy = 0.254
+shadow_enabled = true
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, -0.770491, 0.637451, 0, -0.637451, -0.770491, 1.2, 1.5, -0.9)
+light_energy = 0.254
+shadow_enabled = true
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.799685, 0.60042, 0, -0.60042, 0.799685, -1.2, 1.5, 0.9)
+light_energy = 0.254
+shadow_enabled = true
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.770513, 0.637424, 0, -0.637424, 0.770513, 0, 1.5, 0.9)
+light_energy = 0.254
+shadow_enabled = true
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.770513, 0.637424, 0, -0.637424, 0.770513, 1.2, 1.5, 0.9)
+light_energy = 0.254
+shadow_enabled = true

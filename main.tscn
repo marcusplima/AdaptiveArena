@@ -1,4 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://c5f1gell1psoj"]
+[gd_scene load_steps=11 format=3 uid="uid://c5f1gell1psoj"]
+
+[ext_resource type="Texture2D" uid="uid://ci0o5qmcy38vx" path="res://Assets/Textures/vecteezy_vector-football-soccer-ball-pattern_104897_920/vecteezy_vector-football-soccer-ball-pattern_104897mono.bmp" id="1_e1by8"]
+[ext_resource type="Texture2D" uid="uid://ebahmamiwg7u" path="res://Assets/Textures/vecteezy_vector-football-soccer-ball-pattern_104897_920/vecteezy_vector-football-soccer-ball-pattern_104897.jpg" id="2_4xqre"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hgbit"]
 bounce = 0.7
@@ -7,13 +10,18 @@ bounce = 0.7
 margin = 0.0
 radius = 0.05
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2s4i4"]
-albedo_color = Color(0.243137, 0.309804, 0.345098, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sb8xb"]
+albedo_texture = ExtResource("1_e1by8")
+metallic_specular = 0.0
+normal_enabled = true
+normal_scale = 16.0
+normal_texture = ExtResource("2_4xqre")
+texture_filter = 0
 
-[sub_resource type="SphereMesh" id="SphereMesh_qcrfp"]
-material = SubResource("StandardMaterial3D_2s4i4")
-radius = 0.05
-height = 0.1
+[sub_resource type="SphereMesh" id="SphereMesh_oy78s"]
+material = SubResource("StandardMaterial3D_sb8xb")
+radius = 0.03
+height = 0.06
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ekied"]
 bounce = 0.14
@@ -33,6 +41,7 @@ size = Vector2(2.4, 1.8)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.529919, 0.848048, 0, -0.848048, 0.529919, 0, 3, 2)
+visible = false
 current = true
 fov = 25.0
 
@@ -44,7 +53,7 @@ physics_material_override = SubResource("PhysicsMaterial_hgbit")
 shape = SubResource("SphereShape3D_qg1ng")
 
 [node name="MeshInstance3DBall" type="MeshInstance3D" parent="RigidBody3DBall"]
-mesh = SubResource("SphereMesh_qcrfp")
+mesh = SubResource("SphereMesh_oy78s")
 skeleton = NodePath("../..")
 
 [node name="StaticBody3DTable" type="StaticBody3D" parent="."]
@@ -106,30 +115,30 @@ skeleton = NodePath("../..")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, -0.770491, 0.637451, 0, -0.637451, -0.770491, -1.2, 1.5, -0.9)
-light_energy = 0.254
+light_energy = 1.083
 shadow_enabled = true
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, -0.770491, 0.637451, 0, -0.637451, -0.770491, 0, 1.5, -0.9)
-light_energy = 0.254
+light_energy = 1.083
 shadow_enabled = true
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, -0.770491, 0.637451, 0, -0.637451, -0.770491, 1.2, 1.5, -0.9)
-light_energy = 0.254
+light_energy = 1.083
 shadow_enabled = true
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 0.799685, 0.60042, 0, -0.60042, 0.799685, -1.2, 1.5, 0.9)
-light_energy = 0.254
+light_energy = 1.083
 shadow_enabled = true
 
 [node name="SpotLight3D5" type="SpotLight3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 0.770513, 0.637424, 0, -0.637424, 0.770513, 0, 1.5, 0.9)
-light_energy = 0.254
+light_energy = 1.083
 shadow_enabled = true
 
 [node name="SpotLight3D6" type="SpotLight3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 0.770513, 0.637424, 0, -0.637424, 0.770513, 1.2, 1.5, 0.9)
-light_energy = 0.254
+light_energy = 1.083
 shadow_enabled = true

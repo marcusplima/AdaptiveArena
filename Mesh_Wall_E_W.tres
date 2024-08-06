@@ -1,0 +1,7 @@
+[gd_resource type="PlaneMesh" load_steps=2 format=3 uid="uid://b7hxtq83b3qrb"]
+
+[ext_resource type="Material" uid="uid://6gj0fcdqa3pf" path="res://concrete.tres" id="1_og6gw"]
+
+[resource]
+material = ExtResource("1_og6gw")
+size = Vector2(0.5, 1.8)

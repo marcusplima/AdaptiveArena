@@ -1,4 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://c5f1gell1psoj"]
+[gd_scene load_steps=16 format=3 uid="uid://c5f1gell1psoj"]
+
+[ext_resource type="Texture2D" uid="uid://cwfi5dkytkvn8" path="res://Assets/Textures/space-ship-monitor-unity/space-ship-monitor-unity/space-ship-monitor_albedo.png" id="1_i08qn"]
+[ext_resource type="Texture2D" uid="uid://b40s2a5m37oin" path="res://Assets/Textures/space-ship-monitor-unity/space-ship-monitor-unity/space-ship-monitor_ao.png" id="2_se11q"]
+[ext_resource type="Texture2D" uid="uid://bdlnkbrao4vtr" path="res://Assets/Textures/space-ship-monitor-unity/space-ship-monitor-unity/space-ship-monitor_height.png" id="3_63qpm"]
+[ext_resource type="Shape3D" uid="uid://6w6gr4qeb5e0" path="res://BoxShape3DTable.tres" id="3_fhnym"]
+[ext_resource type="PlaneMesh" uid="uid://dnaoa852o31rr" path="res://Mesh_Table.tres" id="4_ukvlj"]
+[ext_resource type="Texture2D" uid="uid://wdns66se3jbo" path="res://Assets/Textures/space-ship-monitor-unity/space-ship-monitor-unity/space-ship-monitor_normal-ogl.png" id="4_ys6xb"]
+[ext_resource type="PlaneMesh" uid="uid://diwxhn4syq58s" path="res://Mesh_Wall_N_S.tres" id="6_sv2y8"]
+[ext_resource type="PlaneMesh" uid="uid://b7hxtq83b3qrb" path="res://Mesh_Wall_E_W.tres" id="8_e5mbu"]
+[ext_resource type="Shape3D" uid="uid://cdplpjy2waiou" path="res://BoxShape3DWallN_S.tres" id="8_lyl06"]
+[ext_resource type="Shape3D" uid="uid://c6kqlofjpekho" path="res://BoxShape3DWallE_W.tres" id="9_56sry"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hgbit"]
 bounce = 0.7
@@ -7,34 +18,34 @@ bounce = 0.7
 margin = 0.0
 radius = 0.05
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2s4i4"]
-albedo_color = Color(0.243137, 0.309804, 0.345098, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sb8xb"]
+albedo_texture = ExtResource("1_i08qn")
+metallic_specular = 0.0
+normal_enabled = true
+normal_scale = -0.72
+normal_texture = ExtResource("4_ys6xb")
+ao_enabled = true
+ao_texture = ExtResource("2_se11q")
+heightmap_enabled = true
+heightmap_scale = -16.0
+heightmap_texture = ExtResource("3_63qpm")
+uv1_scale = Vector3(8, 8, 8)
+texture_filter = 0
 
-[sub_resource type="SphereMesh" id="SphereMesh_qcrfp"]
-material = SubResource("StandardMaterial3D_2s4i4")
-radius = 0.05
-height = 0.1
+[sub_resource type="SphereMesh" id="SphereMesh_oy78s"]
+material = SubResource("StandardMaterial3D_sb8xb")
+radius = 0.03
+height = 0.06
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ekied"]
 bounce = 0.14
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_7c8rd"]
-margin = 0.0
-size = Vector3(2.4, 1, 1.8)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_572b5"]
-albedo_color = Color(0.309804, 1, 0.109804, 1)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_s2vl2"]
-material = SubResource("StandardMaterial3D_572b5")
-size = Vector2(2.4, 1.8)
-
 [node name="Node3D" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.529919, 0.848048, 0, -0.848048, 0.529919, 0, 3, 2)
+transform = Transform3D(1, 0, 0, 0, 0.62932, 0.777146, 0, -0.777146, 0.62932, 0, 3, 2.2)
 current = true
-fov = 25.0
+fov = 25.9
 
 [node name="RigidBody3DBall" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -44,7 +55,7 @@ physics_material_override = SubResource("PhysicsMaterial_hgbit")
 shape = SubResource("SphereShape3D_qg1ng")
 
 [node name="MeshInstance3DBall" type="MeshInstance3D" parent="RigidBody3DBall"]
-mesh = SubResource("SphereMesh_qcrfp")
+mesh = SubResource("SphereMesh_oy78s")
 skeleton = NodePath("../..")
 
 [node name="StaticBody3DTable" type="StaticBody3D" parent="."]
@@ -52,84 +63,93 @@ physics_material_override = SubResource("PhysicsMaterial_ekied")
 
 [node name="CollisionShape3DTable" type="CollisionShape3D" parent="StaticBody3DTable"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-shape = SubResource("BoxShape3D_7c8rd")
+shape = ExtResource("3_fhnym")
 
 [node name="MeshInstance3DTable" type="MeshInstance3D" parent="StaticBody3DTable"]
-mesh = SubResource("PlaneMesh_s2vl2")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+mesh = ExtResource("4_ukvlj")
 skeleton = NodePath("../..")
 
 [node name="StaticBody3DWallN" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.9)
 physics_material_override = SubResource("PhysicsMaterial_ekied")
 
 [node name="CollisionShape3DWallN" type="CollisionShape3D" parent="StaticBody3DWallN"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-shape = SubResource("BoxShape3D_7c8rd")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -0.25)
+shape = ExtResource("8_lyl06")
 
 [node name="MeshInstance3DWallN" type="MeshInstance3D" parent="StaticBody3DWallN"]
-mesh = SubResource("PlaneMesh_s2vl2")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.25)
+mesh = ExtResource("6_sv2y8")
 skeleton = NodePath("../..")
 
 [node name="StaticBody3DWallS" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.9)
 physics_material_override = SubResource("PhysicsMaterial_ekied")
 
 [node name="CollisionShape3DWallS" type="CollisionShape3D" parent="StaticBody3DWallS"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-shape = SubResource("BoxShape3D_7c8rd")
+shape = ExtResource("8_lyl06")
 
 [node name="MeshInstance3DWallS" type="MeshInstance3D" parent="StaticBody3DWallS"]
-mesh = SubResource("PlaneMesh_s2vl2")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.25)
+mesh = ExtResource("6_sv2y8")
 skeleton = NodePath("../..")
 
 [node name="StaticBody3DWallE" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 1.2, 0, 0)
 physics_material_override = SubResource("PhysicsMaterial_ekied")
 
 [node name="CollisionShape3DWallE" type="CollisionShape3D" parent="StaticBody3DWallE"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-shape = SubResource("BoxShape3D_7c8rd")
+shape = ExtResource("9_56sry")
 
 [node name="MeshInstance3DWallE" type="MeshInstance3D" parent="StaticBody3DWallE"]
-mesh = SubResource("PlaneMesh_s2vl2")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0, 0)
+mesh = ExtResource("8_e5mbu")
 skeleton = NodePath("../..")
 
 [node name="StaticBody3DWallW" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -1.2, 0, 0)
 physics_material_override = SubResource("PhysicsMaterial_ekied")
 
 [node name="CollisionShape3DWallW" type="CollisionShape3D" parent="StaticBody3DWallW"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-shape = SubResource("BoxShape3D_7c8rd")
+shape = ExtResource("9_56sry")
 
 [node name="MeshInstance3DWallW" type="MeshInstance3D" parent="StaticBody3DWallW"]
-mesh = SubResource("PlaneMesh_s2vl2")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, 0)
+mesh = ExtResource("8_e5mbu")
 skeleton = NodePath("../..")
 
 [node name="Node3D" type="Node3D" parent="."]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, -0.770491, 0.637451, 0, -0.637451, -0.770491, -1.2, 1.5, -0.9)
-light_energy = 0.254
+light_energy = 1.083
 shadow_enabled = true
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, -0.770491, 0.637451, 0, -0.637451, -0.770491, 0, 1.5, -0.9)
-light_energy = 0.254
+light_energy = 1.083
 shadow_enabled = true
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, -0.770491, 0.637451, 0, -0.637451, -0.770491, 1.2, 1.5, -0.9)
-light_energy = 0.254
+light_energy = 1.083
 shadow_enabled = true
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 0.799685, 0.60042, 0, -0.60042, 0.799685, -1.2, 1.5, 0.9)
-light_energy = 0.254
+light_energy = 1.083
 shadow_enabled = true
 
 [node name="SpotLight3D5" type="SpotLight3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 0.770513, 0.637424, 0, -0.637424, 0.770513, 0, 1.5, 0.9)
-light_energy = 0.254
+light_energy = 1.083
 shadow_enabled = true
 
 [node name="SpotLight3D6" type="SpotLight3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 0.770513, 0.637424, 0, -0.637424, 0.770513, 1.2, 1.5, 0.9)
-light_energy = 0.254
+light_energy = 1.083
 shadow_enabled = true

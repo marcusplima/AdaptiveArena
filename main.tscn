@@ -1,22 +1,22 @@
-[gd_scene load_steps=16 format=3 uid="uid://c5f1gell1psoj"]
+[gd_scene load_steps=17 format=3 uid="uid://c5f1gell1psoj"]
 
 [ext_resource type="Texture2D" uid="uid://cwfi5dkytkvn8" path="res://Assets/Textures/space-ship-monitor-unity/space-ship-monitor-unity/space-ship-monitor_albedo.png" id="1_i08qn"]
 [ext_resource type="Texture2D" uid="uid://b40s2a5m37oin" path="res://Assets/Textures/space-ship-monitor-unity/space-ship-monitor-unity/space-ship-monitor_ao.png" id="2_se11q"]
 [ext_resource type="Texture2D" uid="uid://bdlnkbrao4vtr" path="res://Assets/Textures/space-ship-monitor-unity/space-ship-monitor-unity/space-ship-monitor_height.png" id="3_63qpm"]
-[ext_resource type="Shape3D" uid="uid://dnaoa852o31rr" path="res://Mesh_Table.tres" id="3_fhnym"]
-[ext_resource type="PlaneMesh" uid="uid://dnaoa852o31rr" path="res://Mesh_Table.tres" id="4_ukvlj"]
 [ext_resource type="Texture2D" uid="uid://wdns66se3jbo" path="res://Assets/Textures/space-ship-monitor-unity/space-ship-monitor-unity/space-ship-monitor_normal-ogl.png" id="4_ys6xb"]
-[ext_resource type="PlaneMesh" uid="uid://dnaoa852o31rr" path="res://Mesh_Table.tres" id="6_sv2y8"]
+[ext_resource type="PlaneMesh" uid="uid://dta3su2oxq31c" path="res://Mesh_Wall_N_S.tres" id="7_niw3k"]
 [ext_resource type="PlaneMesh" uid="uid://dnaoa852o31rr" path="res://Mesh_Table.tres" id="8_e5mbu"]
 [ext_resource type="Shape3D" uid="uid://cdplpjy2waiou" path="res://BoxShape3DWallN_S.tres" id="8_lyl06"]
 [ext_resource type="Shape3D" uid="uid://c6kqlofjpekho" path="res://BoxShape3DWallE_W.tres" id="9_56sry"]
+[ext_resource type="PlaneMesh" uid="uid://b6q5205eldw38" path="res://Mesh_Wall_E_W.tres" id="9_ip6vu"]
+[ext_resource type="PackedScene" uid="uid://blj5mobln11uq" path="res://scene_hand.tscn" id="10_mtq47"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hgbit"]
 bounce = 0.7
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qg1ng"]
 margin = 0.0
-radius = 0.05
+radius = 0.03
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sb8xb"]
 albedo_texture = ExtResource("1_i08qn")
@@ -39,6 +39,9 @@ height = 0.06
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ekied"]
 bounce = 0.14
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_77ki7"]
+size = Vector3(2.4, 1, 1.8)
 
 [node name="Node3D" type="Node3D"]
 
@@ -63,11 +66,11 @@ physics_material_override = SubResource("PhysicsMaterial_ekied")
 
 [node name="CollisionShape3DTable" type="CollisionShape3D" parent="StaticBody3DTable"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-shape = ExtResource("3_fhnym")
+shape = SubResource("BoxShape3D_77ki7")
 
 [node name="MeshInstance3DTable" type="MeshInstance3D" parent="StaticBody3DTable"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
-mesh = ExtResource("4_ukvlj")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 0)
+mesh = ExtResource("8_e5mbu")
 skeleton = NodePath("../..")
 
 [node name="StaticBody3DWallN" type="StaticBody3D" parent="."]
@@ -76,11 +79,12 @@ physics_material_override = SubResource("PhysicsMaterial_ekied")
 
 [node name="CollisionShape3DWallN" type="CollisionShape3D" parent="StaticBody3DWallN"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -0.25)
+visible = false
 shape = ExtResource("8_lyl06")
 
 [node name="MeshInstance3DWallN" type="MeshInstance3D" parent="StaticBody3DWallN"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.25)
-mesh = ExtResource("6_sv2y8")
+mesh = ExtResource("7_niw3k")
 skeleton = NodePath("../..")
 
 [node name="StaticBody3DWallS" type="StaticBody3D" parent="."]
@@ -88,12 +92,13 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 
 physics_material_override = SubResource("PhysicsMaterial_ekied")
 
 [node name="CollisionShape3DWallS" type="CollisionShape3D" parent="StaticBody3DWallS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.25)
+visible = false
 shape = ExtResource("8_lyl06")
 
 [node name="MeshInstance3DWallS" type="MeshInstance3D" parent="StaticBody3DWallS"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.25)
-mesh = ExtResource("6_sv2y8")
+mesh = ExtResource("7_niw3k")
 skeleton = NodePath("../..")
 
 [node name="StaticBody3DWallE" type="StaticBody3D" parent="."]
@@ -102,11 +107,12 @@ physics_material_override = SubResource("PhysicsMaterial_ekied")
 
 [node name="CollisionShape3DWallE" type="CollisionShape3D" parent="StaticBody3DWallE"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+visible = false
 shape = ExtResource("9_56sry")
 
 [node name="MeshInstance3DWallE" type="MeshInstance3D" parent="StaticBody3DWallE"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0, 0)
-mesh = ExtResource("8_e5mbu")
+mesh = ExtResource("9_ip6vu")
 skeleton = NodePath("../..")
 
 [node name="StaticBody3DWallW" type="StaticBody3D" parent="."]
@@ -119,37 +125,44 @@ shape = ExtResource("9_56sry")
 
 [node name="MeshInstance3DWallW" type="MeshInstance3D" parent="StaticBody3DWallW"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, 0)
-mesh = ExtResource("8_e5mbu")
+mesh = ExtResource("9_ip6vu")
 skeleton = NodePath("../..")
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="Node3D_Lights" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.01808, 0)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Node3D"]
+[node name="SpotLight3D" type="SpotLight3D" parent="Node3D_Lights"]
 transform = Transform3D(1, 0, 0, 0, -0.770491, 0.637451, 0, -0.637451, -0.770491, -1.2, 1.5, -0.9)
 light_energy = 1.083
 shadow_enabled = true
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="Node3D"]
+[node name="SpotLight3D2" type="SpotLight3D" parent="Node3D_Lights"]
 transform = Transform3D(1, 0, 0, 0, -0.770491, 0.637451, 0, -0.637451, -0.770491, 0, 1.5, -0.9)
 light_energy = 1.083
 shadow_enabled = true
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Node3D"]
+[node name="SpotLight3D3" type="SpotLight3D" parent="Node3D_Lights"]
 transform = Transform3D(1, 0, 0, 0, -0.770491, 0.637451, 0, -0.637451, -0.770491, 1.2, 1.5, -0.9)
 light_energy = 1.083
 shadow_enabled = true
 
-[node name="SpotLight3D4" type="SpotLight3D" parent="Node3D"]
+[node name="SpotLight3D4" type="SpotLight3D" parent="Node3D_Lights"]
 transform = Transform3D(1, 0, 0, 0, 0.799685, 0.60042, 0, -0.60042, 0.799685, -1.2, 1.5, 0.9)
 light_energy = 1.083
 shadow_enabled = true
 
-[node name="SpotLight3D5" type="SpotLight3D" parent="Node3D"]
+[node name="SpotLight3D5" type="SpotLight3D" parent="Node3D_Lights"]
 transform = Transform3D(1, 0, 0, 0, 0.770513, 0.637424, 0, -0.637424, 0.770513, 0, 1.5, 0.9)
 light_energy = 1.083
 shadow_enabled = true
 
-[node name="SpotLight3D6" type="SpotLight3D" parent="Node3D"]
+[node name="SpotLight3D6" type="SpotLight3D" parent="Node3D_Lights"]
 transform = Transform3D(1, 0, 0, 0, 0.770513, 0.637424, 0, -0.637424, 0.770513, 1.2, 1.5, 0.9)
 light_energy = 1.083
 shadow_enabled = true
+
+[node name="Node3D2" parent="." instance=ExtResource("10_mtq47")]
+transform = Transform3D(0.898672, 0.438622, 0, -0.438622, 0.898672, 0, 0, 0, 1, -1.07075, 0.222798, 0)
+
+[node name="Node3D3" parent="." instance=ExtResource("10_mtq47")]
+transform = Transform3D(-0.952555, -0.304366, -8.3275e-08, -0.304366, 0.952555, -2.66085e-08, 8.74228e-08, 0, -1, 1.0958, 0.238632, 0)

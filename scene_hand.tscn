@@ -122,7 +122,6 @@ height = 0.016
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.271721)
 bones/8/position = Vector3(3.09079e-08, 0.069626, -1.18493e-08)
 bones/8/rotation = Quaternion(0.162856, 0.0267044, -0.00144252, 0.986287)
-bones/8/scale = Vector3(1, 1, 1)
 bones/11/position = Vector3(-0.00350635, -0.00832418, 0.0243584)
 bones/11/rotation = Quaternion(0.022001, 0.734934, 0.162534, 0.658005)
 bones/11/scale = Vector3(1, 1, 1)
@@ -138,7 +137,6 @@ bones/15/scale = Vector3(1, 1, 1)
 bones/19/rotation = Quaternion(0.61271, -0.0241367, -0.0172323, 0.789751)
 bones/19/scale = Vector3(1, 1, 1)
 bones/20/rotation = Quaternion(0.633578, -0.0348686, -0.0472994, 0.771444)
-bones/20/scale = Vector3(1, 1, 1)
 bones/21/position = Vector3(2.35828e-08, 0.0318007, 6.16782e-08)
 bones/21/rotation = Quaternion(0.637216, -0.0305894, -0.0880664, 0.765025)
 bones/21/scale = Vector3(1, 1, 1)
@@ -153,10 +151,10 @@ bones/25/rotation = Quaternion(0.722113, 0.00188533, -0.160749, 0.672837)
 bones/25/scale = Vector3(1, 1, 1)
 
 [node name="PhysicalBone3D_thumb_02" type="PhysicalBone3D" parent="Hand/metarig/Skeleton3D" index="0"]
-transform = Transform3D(0.751643, 0.604384, -0.26418, 0.604996, -0.472153, 0.641153, 0.262773, -0.641735, -0.720523, 0.693145, 1.24313, -0.00438898)
-joint_offset = Transform3D(1, -7.45058e-09, -2.22045e-16, 7.45058e-09, 1, 0, 2.22045e-16, -1.65436e-24, 1, -2.75974e-05, 1.85896e-06, -2.59298e-06)
+transform = Transform3D(0.751643, 0.604387, -0.264182, 0.604998, -0.472154, 0.641153, 0.262774, -0.641738, -0.720522, 0.693145, 1.24313, -0.00438899)
+joint_offset = Transform3D(1, -7.45058e-09, -2.22045e-16, 7.45058e-09, 1, 0, 2.22045e-16, -1.65436e-24, 1, -2.77137e-05, 1.91483e-06, -2.68984e-06)
 joint_rotation = Vector3(0, -2.22045e-16, 7.45058e-09)
-body_offset = Transform3D(1.00002, -2.90573e-06, -1.49012e-07, 2.63751e-06, 1.00002, -2.5034e-06, -7.58469e-06, -1.60933e-06, 1.00001, 2.75979e-05, -1.85892e-06, 2.5928e-06)
+body_offset = Transform3D(1.00002, -3.20375e-06, -1.02818e-06, 2.66731e-06, 1.00002, -3.45707e-06, -7.58469e-06, -1.49012e-06, 1.00001, 2.77143e-05, -1.9148e-06, 2.68966e-06)
 bone_name = "thumb.02.L"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hand/metarig/Skeleton3D/PhysicalBone3D_thumb_02"]
@@ -169,9 +167,9 @@ mesh = SubResource("CapsuleMesh_6peiy")
 skeleton = NodePath("../..")
 
 [node name="PhysicalBone3D_thumb_03" type="PhysicalBone3D" parent="Hand/metarig/Skeleton3D" index="1"]
-transform = Transform3D(0.821595, 0.353376, -0.44795, 0.478488, 0.000130892, 0.877929, 0.310252, -0.935482, -0.169091, 0.713351, 1.22734, -0.0258646)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.50541e-05, -9.20648e-06, -1.04072e-05)
-body_offset = Transform3D(1.00011, -2.68221e-07, -1.6056e-06, 0.000159591, 1, 2.39909e-06, -0.000414897, -7.59959e-07, 1, 1.50558e-05, 9.20892e-06, 1.0401e-05)
+transform = Transform3D(0.821592, 0.353376, -0.447949, 0.478487, 0.000131771, 0.877924, 0.310252, -0.935481, -0.16909, 0.713351, 1.22734, -0.0258647)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5056e-05, -9.20649e-06, -1.04073e-05)
+body_offset = Transform3D(1.00011, -2.98023e-07, -1.6503e-06, 0.000159621, 1, 2.38419e-06, -0.00041486, -7.30157e-07, 1, 1.50576e-05, 9.20892e-06, 1.0401e-05)
 bone_name = "thumb.03.L"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hand/metarig/Skeleton3D/PhysicalBone3D_thumb_03"]
@@ -182,9 +180,9 @@ shape = SubResource("CapsuleShape3D_mc853")
 mesh = SubResource("CapsuleMesh_5401s")
 
 [node name="PhysicalBone3D_index_01" type="PhysicalBone3D" parent="Hand/metarig/Skeleton3D" index="2"]
-transform = Transform3D(0.243907, 0.551336, -0.797842, -0.0964421, -0.804816, -0.585652, -0.964991, 0.219791, -0.143128, 0.74642, 1.2482, -0.00509889)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.58374e-06, -1.01402e-05, 1.64731e-05)
-body_offset = Transform3D(1, -3.76999e-06, -1.81794e-06, 1.93715e-07, 1, -2.49967e-06, 8.34465e-07, 7.30902e-06, 1.00001, 3.58373e-06, 1.01402e-05, -1.64732e-05)
+transform = Transform3D(0.243907, 0.551334, -0.79784, -0.0964421, -0.804813, -0.58565, -0.964992, 0.21979, -0.143127, 0.74642, 1.2482, -0.00509895)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.63217e-06, -1.01327e-05, 1.64657e-05)
+body_offset = Transform3D(1, -3.97861e-06, -1.81794e-06, 1.63913e-07, 1, -2.5034e-06, 8.79169e-07, 7.35e-06, 1.00001, 3.63216e-06, 1.01328e-05, -1.64658e-05)
 bone_name = "f_index.01.L"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hand/metarig/Skeleton3D/PhysicalBone3D_index_01"]
@@ -195,9 +193,9 @@ shape = SubResource("CapsuleShape3D_m0w1o")
 mesh = SubResource("CapsuleMesh_e451u")
 
 [node name="PhysicalBone3D_index_02" type="PhysicalBone3D" parent="Hand/metarig/Skeleton3D" index="3"]
-transform = Transform3D(0.229996, 0.42205, -0.876932, -0.0981157, -0.886451, -0.452354, -0.968234, 0.19009, -0.162466, 0.77125, 1.21196, 0.00480058)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.27615e-06, -3.41222e-06, 1.80599e-05)
-body_offset = Transform3D(1, -7.53999e-06, -1.63913e-06, 7.45058e-07, 1.00003, -2.92622e-06, -1.47521e-06, 1.03936e-06, 1.00001, 2.27615e-06, 3.41237e-06, -1.80602e-05)
+transform = Transform3D(0.229996, 0.422051, -0.876928, -0.0981157, -0.886453, -0.452352, -0.968233, 0.19009, -0.162465, 0.77125, 1.21196, 0.00480057)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.27615e-06, -3.39731e-06, 1.80526e-05)
+body_offset = Transform3D(1, -7.58469e-06, -1.63913e-06, 9.38773e-07, 1.00003, -3.04915e-06, -1.46031e-06, 9.98378e-07, 1.00001, 2.27615e-06, 3.39746e-06, -1.80528e-05)
 bone_name = "f_index.02.L"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hand/metarig/Skeleton3D/PhysicalBone3D_index_02"]
@@ -208,9 +206,9 @@ shape = SubResource("CapsuleShape3D_8qb4d")
 mesh = SubResource("CapsuleMesh_3llv7")
 
 [node name="PhysicalBone3D_index_03" type="PhysicalBone3D" parent="Hand/metarig/Skeleton3D" index="4"]
-transform = Transform3D(0.194039, 0.225959, -0.954627, -0.0416369, -0.970356, -0.238142, -0.980113, 0.0859546, -0.178876, 0.783162, 1.18694, 0.0101644)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75671e-06, 2.60772e-06, 1.93862e-05)
-body_offset = Transform3D(1, 2.51085e-06, -1.49012e-08, -3.72529e-07, 1.00002, -3.23076e-06, -1.02818e-06, 3.44496e-06, 1.00001, 2.75671e-06, -2.6077e-06, -1.93864e-05)
+transform = Transform3D(0.194038, 0.22596, -0.954626, -0.0416371, -0.970357, -0.238141, -0.980108, 0.0859549, -0.178876, 0.783162, 1.18694, 0.0101662)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.27604e-07, 2.48851e-06, 1.98258e-05)
+body_offset = Transform3D(0.999998, 2.5183e-06, -5.96046e-08, 2.98023e-08, 1.00002, -3.30061e-06, -1.01328e-06, 3.43286e-06, 1.00001, 9.27597e-07, -2.48849e-06, -1.9826e-05)
 bone_name = "f_index.03.L"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hand/metarig/Skeleton3D/PhysicalBone3D_index_03"]
@@ -221,9 +219,9 @@ shape = SubResource("CapsuleShape3D_8nmwt")
 mesh = SubResource("CapsuleMesh_nduom")
 
 [node name="PhysicalBone3D_middle_01" type="PhysicalBone3D" parent="Hand/metarig/Skeleton3D" index="5"]
-transform = Transform3D(0.0273654, 0.493909, -0.869104, 0.0786968, -0.867798, -0.490687, -0.996529, -0.0549713, -0.0626141, 0.751817, 1.24871, -0.0277225)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.37933e-05, 9.68644e-07, 1.91774e-05)
-body_offset = Transform3D(1.00001, 1.60933e-06, -3.1665e-07, 1.95205e-06, 1.00002, -2.17697e-06, -1.84402e-06, 3.10922e-06, 1.00002, 2.37934e-05, -9.68575e-07, -1.91778e-05)
+transform = Transform3D(0.0273661, 0.493909, -0.869106, 0.0786966, -0.867797, -0.490688, -0.996533, -0.0549706, -0.0626145, 0.751817, 1.24871, -0.0277221)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.34318e-05, 9.90996e-07, 1.91997e-05)
+body_offset = Transform3D(1.00001, 1.72108e-06, -3.12924e-07, 1.98931e-06, 1.00002, -2.17347e-06, -1.8999e-06, 2.98861e-06, 1.00002, 2.34321e-05, -9.90927e-07, -1.92001e-05)
 bone_name = "f_middle.01.L"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hand/metarig/Skeleton3D/PhysicalBone3D_middle_01"]
@@ -234,9 +232,9 @@ shape = SubResource("CapsuleShape3D_shmdg")
 mesh = SubResource("CapsuleMesh_y3jsg")
 
 [node name="PhysicalBone3D_middle_02" type="PhysicalBone3D" parent="Hand/metarig/Skeleton3D" index="6"]
-transform = Transform3D(-0.050377, 0.274963, -0.960144, 0.0726771, -0.957813, -0.278106, -0.996082, -0.0837924, 0.0282729, 0.776289, 1.20572, -0.0304246)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.79644e-07, 2.14573e-06, 2.24037e-05)
-body_offset = Transform3D(1, 9.61125e-07, -4.90434e-06, 2.83122e-07, 1.00002, 2.95229e-07, -5.58794e-09, 1.16415e-09, 1.00001, 9.79751e-07, -2.14577e-06, -2.24039e-05)
+transform = Transform3D(-0.0503569, 0.274959, -0.960144, 0.0726359, -0.957794, -0.278106, -0.995818, -0.0837897, 0.0282725, 0.776289, 1.20572, -0.0304246)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9481e-07, 2.3842e-06, 2.23143e-05)
+body_offset = Transform3D(0.999733, 6.4075e-07, -4.90062e-06, 2.24337e-05, 0.999996, 6.46804e-07, -2.79397e-08, -6.36792e-07, 1.00001, 9.94653e-07, -2.38419e-06, -2.23145e-05)
 bone_name = "f_middle.02.L"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hand/metarig/Skeleton3D/PhysicalBone3D_middle_02"]
@@ -247,9 +245,9 @@ shape = SubResource("CapsuleShape3D_l27um")
 mesh = SubResource("CapsuleMesh_lipi4")
 
 [node name="PhysicalBone3D_middle_03" type="PhysicalBone3D" parent="Hand/metarig/Skeleton3D" index="7"]
-transform = Transform3D(-0.0981334, 0.158262, -0.98252, 0.102855, -0.980382, -0.168194, -0.98985, -0.117561, 0.0799286, 0.785135, 1.17488, -0.0331228)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.05259e-07, 1.54975e-06, 1.48265e-05)
-body_offset = Transform3D(1.00001, -9.0152e-07, 1.36346e-06, 3.65078e-07, 1.00001, -3.04915e-06, -3.57628e-07, 5.89807e-06, 1.00001, 9.05246e-07, -1.54972e-06, -1.48267e-05)
+transform = Transform3D(-0.0981333, 0.158263, -0.982518, 0.102855, -0.980384, -0.168194, -0.989854, -0.11756, 0.0799275, 0.785135, 1.17488, -0.0331227)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.61141e-07, 1.92227e-06, 1.46402e-05)
+body_offset = Transform3D(1.00001, -1.06543e-06, 1.9297e-06, 3.65078e-07, 1.00001, -2.87313e-06, -3.57628e-07, 5.82077e-06, 1.00001, 9.61125e-07, -1.92225e-06, -1.46404e-05)
 bone_name = "f_middle.03.L"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hand/metarig/Skeleton3D/PhysicalBone3D_middle_03"]
@@ -260,9 +258,9 @@ shape = SubResource("CapsuleShape3D_buf6g")
 mesh = SubResource("CapsuleMesh_pi0il")
 
 [node name="PhysicalBone3D_ring_01" type="PhysicalBone3D" parent="Hand/metarig/Skeleton3D" index="8"]
-transform = Transform3D(-0.0502772, -0.339511, -0.93927, -0.0339906, -0.93933, 0.341344, -0.998157, 0.0490885, 0.0356828, 0.754017, 1.24819, -0.0521)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.11073e-07, -1.97625e-06, 1.87604e-05)
-body_offset = Transform3D(1, 9.574e-07, 5.8189e-06, -9.20147e-07, 1.00001, 1.69966e-07, -1.56462e-06, 8.66049e-06, 1.00001, -6.1118e-07, 1.97627e-06, -1.87606e-05)
+transform = Transform3D(-0.0502772, -0.339512, -0.939272, -0.0339906, -0.939331, 0.341347, -0.998157, 0.0490879, 0.0356828, 0.754017, 1.24819, -0.0521)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.10841e-07, -1.97623e-06, 1.87529e-05)
+body_offset = Transform3D(1, 1.58697e-06, 5.84126e-06, -9.27597e-07, 1.00001, -9.91044e-07, -1.56462e-06, 8.78773e-06, 1.00001, -6.10948e-07, 1.97627e-06, -1.87531e-05)
 bone_name = "f_ring.01.L"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hand/metarig/Skeleton3D/PhysicalBone3D_ring_01"]
@@ -273,9 +271,9 @@ shape = SubResource("CapsuleShape3D_r1d4e")
 mesh = SubResource("CapsuleMesh_sf0e8")
 
 [node name="PhysicalBone3D_ring_02" type="PhysicalBone3D" parent="Hand/metarig/Skeleton3D" index="9"]
-transform = Transform3D(-0.00439082, -0.988021, 0.153561, 0.0742013, 0.152812, 0.98545, -0.99721, 0.0157135, 0.0726438, 0.738788, 1.20609, -0.0499003)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.85372e-07, 5.37974e-06, 1.25172e-05)
-body_offset = Transform3D(0.999976, 6.99237e-06, 4.76092e-06, 3.59491e-07, 0.999892, 1.23059e-05, 1.45286e-06, -3.63495e-06, 0.999985, -6.85453e-07, -5.37932e-06, -1.2517e-05)
+transform = Transform3D(-0.00439081, -0.988024, 0.15356, 0.0742012, 0.15281, 0.98545, -0.997209, 0.0157098, 0.072644, 0.738788, 1.20609, -0.0499003)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.86286e-07, 5.38719e-06, 1.25097e-05)
+body_offset = Transform3D(0.999976, 1.06264e-05, 4.64171e-06, 3.31551e-07, 0.999894, 1.22149e-05, 1.37091e-06, -5.00947e-06, 0.999985, -6.86385e-07, -5.38677e-06, -1.25095e-05)
 bone_name = "f_ring.02.L"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hand/metarig/Skeleton3D/PhysicalBone3D_ring_02"]
@@ -286,9 +284,9 @@ shape = SubResource("CapsuleShape3D_iegmi")
 mesh = SubResource("CapsuleMesh_1d126")
 
 [node name="PhysicalBone3D_ring_03" type="PhysicalBone3D" parent="Hand/metarig/Skeleton3D" index="10"]
-transform = Transform3D(0.157307, -0.0202092, 0.987354, -0.0181203, 0.99956, 0.0233518, -0.987401, -0.0215623, 0.156871, 0.707348, 1.21096, -0.0494004)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8193e-06, -4.694e-07, 1.39026e-05)
-body_offset = Transform3D(1.00002, -6.63102e-07, 4.32134e-07, -1.75089e-07, 0.999997, 8.63802e-07, 2.98023e-08, 4.62914e-06, 1.00001, -1.81934e-06, 4.69387e-07, -1.39028e-05)
+transform = Transform3D(0.157308, -0.0202096, 0.987352, -0.0181204, 0.99956, 0.023352, -0.987402, -0.0215625, 0.15687, 0.707348, 1.21096, -0.0494004)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.81836e-06, -4.69392e-07, 1.38989e-05)
+body_offset = Transform3D(1.00002, -3.68804e-07, 1.07288e-06, -2.70084e-07, 0.999996, 3.13623e-07, 1.49012e-08, 4.98281e-06, 1.00001, -1.81841e-06, 4.69387e-07, -1.38991e-05)
 bone_name = "f_ring.03.L"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hand/metarig/Skeleton3D/PhysicalBone3D_ring_03"]
@@ -299,9 +297,9 @@ shape = SubResource("CapsuleShape3D_wqepf")
 mesh = SubResource("CapsuleMesh_mgpft")
 
 [node name="PhysicalBone3D_pinky_01" type="PhysicalBone3D" parent="Hand/metarig/Skeleton3D" index="11"]
-transform = Transform3D(-0.150902, -0.53073, -0.834019, 0.102818, -0.847533, 0.520715, -0.983191, -0.00717507, 0.182459, 0.752818, 1.24279, -0.0763003)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.07335e-06, 3.8458e-06, 1.84399e-05)
-body_offset = Transform3D(1, 1.64378e-06, -3.8743e-07, -6.75675e-07, 1.00002, 1.43913e-06, 1.80304e-06, 5.82892e-06, 1.00001, -3.07336e-06, -3.8459e-06, -1.84402e-05)
+transform = Transform3D(-0.150901, -0.530731, -0.834017, 0.102818, -0.84753, 0.520715, -0.983187, -0.00712879, 0.182459, 0.752818, 1.24279, -0.0763003)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.07354e-06, 3.84209e-06, 1.844e-05)
+body_offset = Transform3D(1, -4.35272e-05, -5.21541e-07, -6.90576e-07, 1.00002, 1.41305e-06, 1.69873e-06, 1.50182e-05, 1.00001, -3.07336e-06, -3.84217e-06, -1.84402e-05)
 bone_name = "f_pinky.01.L"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hand/metarig/Skeleton3D/PhysicalBone3D_pinky_01"]
@@ -312,9 +310,9 @@ shape = SubResource("CapsuleShape3D_wqtpk")
 mesh = SubResource("CapsuleMesh_s8jte")
 
 [node name="PhysicalBone3D_pinky_02" type="PhysicalBone3D" parent="Hand/metarig/Skeleton3D" index="12"]
-transform = Transform3D(0.07935, -0.958012, 0.275553, 0.190144, 0.285895, 0.939212, -0.978567, -0.0221355, 0.204846, 0.738006, 1.21916, -0.0765005)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.81159e-06, 5.54325e-06, 1.65775e-05)
-body_offset = Transform3D(1.00002, 4.59142e-06, -7.15256e-07, -6.1281e-07, 1.00001, -3.24519e-06, -4.14252e-06, 2.20584e-06, 1.00001, -2.81166e-06, -5.54323e-06, -1.65775e-05)
+transform = Transform3D(0.0793497, -0.958014, 0.275555, 0.190143, 0.285897, 0.939217, -0.978566, -0.0221352, 0.204846, 0.738006, 1.21916, -0.0765005)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.81252e-06, 5.53579e-06, 1.65774e-05)
+body_offset = Transform3D(1.00002, 4.60632e-06, -7.15256e-07, -6.59376e-07, 1.00001, -3.20654e-06, -4.20213e-06, 2.51643e-06, 1.00001, -2.81259e-06, -5.53578e-06, -1.65775e-05)
 bone_name = "f_pinky.02.L"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hand/metarig/Skeleton3D/PhysicalBone3D_pinky_02"]
@@ -325,9 +323,9 @@ shape = SubResource("CapsuleShape3D_0io8n")
 mesh = SubResource("CapsuleMesh_madvo")
 
 [node name="PhysicalBone3D_pinky_03" type="PhysicalBone3D" parent="Hand/metarig/Skeleton3D" index="13"]
-transform = Transform3D(0.215199, 0.375562, 0.901464, -0.101177, 0.926681, -0.361939, -0.971321, -0.0133408, 0.237429, 0.716352, 1.22563, -0.0770012)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18087e-06, 2.61896e-06, 9.76769e-06)
-body_offset = Transform3D(1.00001, 2.1291e-05, -1.77324e-06, -1.59815e-06, 0.999981, -3.43798e-06, -3.35276e-06, -1.0228e-05, 1.00001, -1.18092e-06, -2.61888e-06, -9.76771e-06)
+transform = Transform3D(0.215199, 0.375562, 0.901469, -0.101178, 0.92668, -0.361943, -0.971325, -0.0133409, 0.237429, 0.716352, 1.22563, -0.0770012)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18832e-06, 2.58545e-06, 9.81235e-06)
+body_offset = Transform3D(1.00001, 2.1359e-05, -1.75834e-06, -1.69594e-06, 0.99998, -4.13228e-06, -3.35276e-06, -1.15184e-05, 1.00001, -1.18837e-06, -2.58535e-06, -9.81241e-06)
 bone_name = "f_pinky.03.L"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hand/metarig/Skeleton3D/PhysicalBone3D_pinky_03"]
@@ -336,5 +334,17 @@ shape = SubResource("CapsuleShape3D_kiewy")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Hand/metarig/Skeleton3D/PhysicalBone3D_pinky_03/CollisionShape3D"]
 mesh = SubResource("CapsuleMesh_e4cko")
+
+[node name="PhysicalBone3D_hand" type="PhysicalBone3D" parent="Hand/metarig/Skeleton3D" index="14"]
+transform = Transform3D(-0.596786, 0.798399, -0.0802331, -0.802404, -0.59381, 0.0596636, -1.41632e-05, 0.0998006, 0.996869, 0.6594, 1.3061, -0.0492)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.47862e-07, 8.05735e-08, -8.13393e-09)
+body_offset = Transform3D(1, 1.59858e-07, -6.43373e-06, 7.64717e-08, 1.00001, 4.39584e-07, 5.63505e-08, 7.52509e-07, 1.00187, -1.47862e-07, -8.0574e-08, 8.14907e-09)
+bone_name = "hand.L"
+
+[node name="CollisionShape3D_hand" type="CollisionShape3D" parent="Hand/metarig/Skeleton3D/PhysicalBone3D_hand"]
+
+[node name="MeshInstance3D_hand" type="MeshInstance3D" parent="Hand/metarig/Skeleton3D/PhysicalBone3D_hand/CollisionShape3D_hand"]
+transform = Transform3D(1, -1.44624e-08, -9.83164e-10, -1.29303e-08, 1, 1.49012e-08, 4.27463e-11, 0, 1, 0, 0, 0)
+skeleton = NodePath("../..")
 
 [editable path="Hand"]

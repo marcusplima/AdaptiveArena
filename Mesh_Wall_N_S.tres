@@ -18,7 +18,11 @@ ao_enabled = true
 ao_texture = ExtResource("2_s2ybq")
 heightmap_enabled = true
 heightmap_texture = ExtResource("3_77p6h")
+<<<<<<< HEAD
 uv1_scale = Vector3(2, 1, 2)
+=======
+uv1_scale = Vector3(2, 2, 2)
+>>>>>>> 6a544af33981774454734b070967096c2b0337cd
 
 [resource]
 material = SubResource("StandardMaterial3D_k2rmc")

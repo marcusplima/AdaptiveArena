@@ -1,7 +1,14 @@
 [gd_resource type="PlaneMesh" load_steps=2 format=3 uid="uid://b7hxtq83b3qrb"]
 
+<<<<<<< HEAD
 [ext_resource type="Material" uid="uid://brqrepkgohbr3" path="res://concrete2.tres" id="1_13hfc"]
 
 [resource]
 material = ExtResource("1_13hfc")
+=======
+[ext_resource type="Material" uid="uid://6gj0fcdqa3pf" path="res://concrete.tres" id="1_og6gw"]
+
+[resource]
+material = ExtResource("1_og6gw")
+>>>>>>> 6a544af33981774454734b070967096c2b0337cd
 size = Vector2(0.5, 1.8)

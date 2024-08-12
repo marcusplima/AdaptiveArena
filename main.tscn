@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c5f1gell1psoj"]
+[gd_scene load_steps=19 format=3 uid="uid://c5f1gell1psoj"]
 
 [ext_resource type="Texture2D" uid="uid://cwfi5dkytkvn8" path="res://Assets/Textures/space-ship-monitor-unity/space-ship-monitor-unity/space-ship-monitor_albedo.png" id="1_i08qn"]
 [ext_resource type="Texture2D" uid="uid://b40s2a5m37oin" path="res://Assets/Textures/space-ship-monitor-unity/space-ship-monitor-unity/space-ship-monitor_ao.png" id="2_se11q"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://blj5mobln11uq" path="res://scene_hand.tscn" id="10_mtq47"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hgbit"]
+rough = true
 bounce = 0.7
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qg1ng"]
@@ -38,10 +39,15 @@ radius = 0.03
 height = 0.06
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ekied"]
-bounce = 0.14
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_77ki7"]
 size = Vector3(2.4, 1, 1.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pn07i"]
+size = Vector3(0.1, 1, 1.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_orm3a"]
+size = Vector3(0.1, 1, 1.8)
 
 [node name="Node3D" type="Node3D"]
 
@@ -51,7 +57,7 @@ current = true
 fov = 25.9
 
 [node name="RigidBody3DBall" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00908, 1, 0)
 physics_material_override = SubResource("PhysicsMaterial_hgbit")
 
 [node name="CollisionShape3DBall" type="CollisionShape3D" parent="RigidBody3DBall"]
@@ -133,16 +139,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.01808, 0)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Node3D_Lights"]
 transform = Transform3D(1, 0, 0, 0, -0.770491, 0.637451, 0, -0.637451, -0.770491, -1.2, 1.5, -0.9)
+visible = false
 light_energy = 1.083
 shadow_enabled = true
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Node3D_Lights"]
 transform = Transform3D(1, 0, 0, 0, -0.770491, 0.637451, 0, -0.637451, -0.770491, 0, 1.5, -0.9)
+visible = false
 light_energy = 1.083
 shadow_enabled = true
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="Node3D_Lights"]
 transform = Transform3D(1, 0, 0, 0, -0.770491, 0.637451, 0, -0.637451, -0.770491, 1.2, 1.5, -0.9)
+visible = false
 light_energy = 1.083
 shadow_enabled = true
 
@@ -161,8 +170,20 @@ transform = Transform3D(1, 0, 0, 0, 0.770513, 0.637424, 0, -0.637424, 0.770513, 
 light_energy = 1.083
 shadow_enabled = true
 
-[node name="Node3D2" parent="." instance=ExtResource("10_mtq47")]
-transform = Transform3D(0.898672, 0.438622, 0, -0.438622, 0.898672, 0, 0, 0, 1, -1.07075, 0.222798, 0)
-
 [node name="Node3D3" parent="." instance=ExtResource("10_mtq47")]
-transform = Transform3D(-0.952555, -0.304366, -8.3275e-08, -0.304366, 0.952555, -2.66085e-08, 8.74228e-08, 0, -1, 1.0958, 0.238632, 0)
+transform = Transform3D(-0.952555, -0.304366, -8.3275e-08, -0.304366, 0.952555, -2.66085e-08, 8.74228e-08, 0, -1, 0.977686, 0.230647, 0.0196331)
+
+[node name="Area3D_Goal_E" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D_Goal_E"]
+shape = SubResource("BoxShape3D_pn07i")
+
+[node name="Area3D_Goal_W" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D_Goal_W"]
+shape = SubResource("BoxShape3D_orm3a")
+
+[node name="Node3D" parent="." instance=ExtResource("10_mtq47")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11972, 0.19264, 0)

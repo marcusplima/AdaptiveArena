@@ -30,6 +30,12 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
+"materials": {
+"Material": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Hand/Material.tres"
+}
+},
 "nodes": {
 "PATH:Cube": {
 "generate/physics": true,
@@ -37,12 +43,6 @@ _subresources={
 "physics/physics_material_override": Object(PhysicsMaterial,"resource_local_to_scene":false,"resource_name":"","friction":1.0,"rough":false,"bounce":0.0,"absorbent":false,"script":null)
 ,
 "physics/shape_type": 1
-},
-"PATH:metarig": {
-"import/skip_import": true
-},
-"PATH:metarig/Skeleton3D": {
-"import/skip_import": true
 }
 }
 }
